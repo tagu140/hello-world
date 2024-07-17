@@ -6,9 +6,9 @@ jobs:
   flake8:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v2
         with:
           python-version: '3.x'
       - name: Install dependencies
@@ -19,7 +19,7 @@ jobs:
         run: |
           flake8 . --tee --output-file=flake8_report.txt
       - name: Upload Flake8 Report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v2
         with:
           name: flake8-report
           path: flake8_report.txt
